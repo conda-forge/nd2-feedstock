@@ -1,5 +1,5 @@
 {% set name = "nd2" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d947f0835313c0c923ad1b7de737666e321294bc72cb51679874b76154d6aedc
+  sha256: 2734e57c88d53a704ca2b2634aef0e05d849c587fc2f364a9fcaf9ece762908a
 
 build:
-  number: 1
-  skip: True  # [win or py<37]
+  number: 0
+  skip: true  # [win or py<37]
 
 requirements:
   build:
@@ -51,7 +51,7 @@ test:
 about:
   home: https://github.com/tlambert03/nd2
   license: BSD-3-Clause AND LicenseRef-LIMnd2sdk
-  license_file: 
+  license_file:
     - LICENSE
     - src/sdk/LICENSE
   summary: nd2 (Nikon NIS Elements) file reader for python
