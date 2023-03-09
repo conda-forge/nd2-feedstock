@@ -1,11 +1,11 @@
-About nd2
-=========
+About nd2-feedstock
+===================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nd2-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/tlambert03/nd2
 
 Package license: BSD-3-Clause AND LicenseRef-LIMnd2sdk
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nd2-feedstock/blob/main/LICENSE.txt)
 
 Summary: nd2 (Nikon NIS Elements) file reader for python
 
