@@ -26,7 +26,6 @@ requirements:
     - typing-extensions
     - numpy
     - imagecodecs
-    - wurlitzer  # [not win]
 
 test:
   imports:
