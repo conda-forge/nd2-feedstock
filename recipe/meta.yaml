@@ -1,5 +1,5 @@
 {% set name = "nd2" %}
-{% set version = "0.5.3" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,42 +7,29 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a9d541719db16acc577565a5aa7941b280ea7acad6b92c574e188f1d774a1f0f
+  sha256: d3364a578bc7a9f631733354c85b433595ebb528fa7a30572b3ea96386ffd330
 
 build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  skip: true  # [win or py<37]
 
 requirements:
-  build:
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-    - sysroot_linux-64 2.17  # [linux64]
-    - libgomp  # [linux]
   host:
-    - python
+    - python >=3.7
+    - hatchling
+    - hatch-vcs
     - pip
-    - cython
-    - numpy
-    - libtiff
-    - libzlib
-    - jpeg
-    - setuptools_scm
   run:
-    - python
-    - lxml
+    - python >=3.7
     - resource_backed_dask_array
-    - {{ pin_compatible('numpy') }}
-    - typing_extensions
+    - typing-extensions
+    - numpy
     - imagecodecs
-    - wurlitzer  # [not win]
 
 test:
   imports:
     - nd2
-    - nd2._sdk.latest
-    - nd2._legacy
-    - imagecodecs._jpeg2k
   requires:
     - pip
   commands:
@@ -50,10 +37,8 @@ test:
 
 about:
   home: https://github.com/tlambert03/nd2
-  license: BSD-3-Clause AND LicenseRef-LIMnd2sdk
-  license_file:
-    - LICENSE
-    - src/sdk/LICENSE
+  license: BSD-3-Clause
+  license_file: LICENSE
   summary: nd2 (Nikon NIS Elements) file reader for python
 
 extra:
