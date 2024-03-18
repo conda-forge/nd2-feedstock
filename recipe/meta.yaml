@@ -16,16 +16,19 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - hatchling
     - hatch-vcs
     - pip
   run:
-    - python >=3.7
+    - python >=3.8
     - resource_backed_dask_array
     - typing-extensions
     - numpy
+    - ome-types >=0.5.1
+    # extras
     - imagecodecs
+    - tifffile
 
 test:
   imports:
