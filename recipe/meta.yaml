@@ -1,5 +1,5 @@
 {% set name = "nd2" %}
-{% set version = "0.9.0" %}
+{% set version = "0.10.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 379640d8c6c9b3401f231931d64afee790b2a8d896754c3c1c354544bf250781
+  sha256: ba7bb780c8e33308f795a9a3f7c8b6b927c64b9d0742536ceedd3e8ba046ebb3
 
 build:
   noarch: python
@@ -16,16 +16,19 @@ build:
 
 requirements:
   host:
-    - python >=3.7
+    - python >=3.8
     - hatchling
     - hatch-vcs
     - pip
   run:
-    - python >=3.7
+    - python >=3.8
     - resource_backed_dask_array
     - typing-extensions
     - numpy
+    - ome-types >=0.5.1
+    # extras
     - imagecodecs
+    - tifffile
 
 test:
   imports:
