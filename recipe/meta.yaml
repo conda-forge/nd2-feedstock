@@ -1,5 +1,5 @@
 {% set name = "nd2" %}
-{% set version = "0.10.3" %}
+{% set version = "0.10.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2511751320cb336603ca98dcf92b35620fd4d5e8e66c94bfe82732fc0995d643
+  sha256: cce1abfb4e0ae31bc307b5f49b8c514190e29105af52c6d59de4105f9aade70a
 
 build:
   noarch: python
